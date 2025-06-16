@@ -1,7 +1,10 @@
+import ExperienceTimeline from "@/components/timeline/ExperienceTimeline";
+
 export default function ExperiencePage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold">Experience (Timeline Placeholder)</h1>
+    <main className="flex flex-col items-center min-h-screen px-4">
+      <h1 className="text-4xl font-bold mt-12 mb-4 text-center">Experience Timeline</h1>
+      <ExperienceTimeline />
     </main>
   );
 }

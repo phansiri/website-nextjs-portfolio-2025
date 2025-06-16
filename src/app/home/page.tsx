@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -60,11 +61,11 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
         >
-          <Link href="/experience">
-            <Button size="lg" className="text-base font-semibold px-8 py-4 shadow-md">
+          <Button asChild size="lg" className="text-base font-semibold px-8 py-4 shadow-md">
+            <Link href="/experience">
               View My Work
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </motion.div>
       </div>
     </main>
