@@ -5,6 +5,7 @@ export type Project = {
   tech: string[];
   visual?: string; // path to image, diagram, or gif
   summary: string;
+  link?: string; // URL for more info
 };
 
 export const projects: Project[] = [
@@ -15,6 +16,7 @@ export const projects: Project[] = [
     tech: ["Python", "Supabase", "pgvector", "Docker"],
     visual: "/visuals/cyber-platform-diagram.png",
     summary: "Developed a scalable platform for monitoring and defending against cyber threats, leveraging AI and modern cloud-native technologies.",
+    link: "https://github.com/example/cyber-platform",
   },
   {
     id: "ai-agent-dev",
@@ -23,6 +25,7 @@ export const projects: Project[] = [
     tech: ["Python", "OpenAI", "FastAPI", "React"],
     visual: "/visuals/ai-agent-gif.gif",
     summary: "Built and deployed generative AI agents for data analysis and mission support, integrating with secure DoD infrastructure.",
+    link: "https://github.com/example/ai-agent-dev",
   },
   {
     id: "data-viz-dashboard",
@@ -31,5 +34,6 @@ export const projects: Project[] = [
     tech: ["TypeScript", "Next.js", "D3.js", "Tailwind CSS"],
     visual: "/visuals/data-viz-dashboard.png",
     summary: "Designed and implemented a dashboard for visualizing operational data, supporting rapid decision-making in dynamic environments.",
+    link: "https://github.com/example/data-viz-dashboard",
   },
 ]; 
