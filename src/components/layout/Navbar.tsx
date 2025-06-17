@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, Fragment } from "react";
 
 const navLinks = [
-  { href: "/home", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
   { href: "/education", label: "Education" },
@@ -12,27 +12,24 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-function HamburgerIcon() {
+function HamburgerToXIcon({ open }: { open: boolean }) {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <span className="block w-6 h-0.5 bg-black rounded mb-1.5"></span>
-      <span className="block w-6 h-0.5 bg-black rounded"></span>
+    <div className="relative w-6 h-6">
+      <span
+        className={`
+          absolute left-0 top-1/2 w-6 h-0.5 bg-black rounded transition-all duration-300
+          ${open ? "rotate-45 translate-y-0" : "-translate-y-2"}
+        `}
+        style={{ transitionProperty: "transform, background" }}
+      />
+      <span
+        className={`
+          absolute left-0 top-1/2 w-6 h-0.5 bg-black rounded transition-all duration-300
+          ${open ? "-rotate-45 translate-y-0" : "translate-y-2"}
+        `}
+        style={{ transitionProperty: "transform, background" }}
+      />
     </div>
-  );
-}
-
-function CloseIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-    </svg>
   );
 }
 
@@ -63,7 +60,7 @@ export default function Navbar() {
       {/* Main navigation bar */}
       <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur border-b border-gray-200">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
-          <div className="font-bold text-lg tracking-tight select-none">Lit Phansiri</div>
+          <div className="font-bold text-lg tracking-tight select-none"><a href="/">Lit Phansiri</a></div>
           {/* Desktop Nav */}
           <div className="hidden md:flex gap-2">
             {navLinks.map((link) => (
@@ -85,7 +82,7 @@ export default function Navbar() {
               className="flex justify-center items-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-black/50"
               aria-label={open ? "Close navigation menu" : "Open navigation menu"}
             >
-              {open ? <CloseIcon /> : <HamburgerIcon />}
+              <HamburgerToXIcon open={open} />
             </button>
           </div>
         </div>

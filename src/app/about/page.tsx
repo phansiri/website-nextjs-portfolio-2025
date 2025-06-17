@@ -7,7 +7,7 @@ export default function AboutPage() {
       <section className="w-full flex flex-col md:flex-row items-center gap-12 py-20 px-6 md:px-16 lg:px-32">
         <div className="flex-shrink-0 flex justify-center w-full md:w-auto">
           <Image
-            src="/images/about-photo.jpg"
+            src="/images/about_lit.jpg"
             alt="Lit Phansiri professional"
             width={260}
             height={260}
