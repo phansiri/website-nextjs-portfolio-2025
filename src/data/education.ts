@@ -5,6 +5,7 @@ export type Education = {
   degree: string;
   concentration: string;
   gradDate: string;
+  description?: string;
 };
 
 export const education: Education[] = [
@@ -15,6 +16,7 @@ export const education: Education[] = [
     degree: "Master of Information and Data Science",
     concentration: "Machine Learning & Data Engineering",
     gradDate: "2023",
+    description: "Rigorous interdisciplinary program focused on advanced machine learning, big data systems, and real-world data science applications. Capstone project in generative AI for cybersecurity.",
   },
   {
     id: "uw-informatics",
@@ -23,5 +25,6 @@ export const education: Education[] = [
     degree: "Bachelor of Science in Informatics",
     concentration: "Data Science & Cybersecurity",
     gradDate: "2015",
+    description: "Comprehensive curriculum in information systems, data analysis, and cybersecurity. Led student research on secure data pipelines and digital transformation in public sector.",
   },
 ]; 
