@@ -36,36 +36,40 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-black/50"
-          aria-label="Open navigation menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {/* Two-line hamburger icon */}
-          <span className={`block w-6 h-0.5 bg-black rounded transition-all duration-300 ${open ? "rotate-45 translate-y-1.5" : "mb-1.5"}`}></span>
-          <span className={`block w-6 h-0.5 bg-black rounded transition-all duration-300 ${open ? "-rotate-45 -translate-y-1.5" : ""}`}></span>
-        </button>
+        {/* Mobile Hamburger (hide when open) */}
+        {!open && (
+          <button
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-black/50"
+            aria-label="Open navigation menu"
+            onClick={() => setOpen(true)}
+          >
+            {/* Two-line hamburger icon */}
+            <span className={`block w-6 h-0.5 bg-black rounded transition-all duration-300 mb-1.5`}></span>
+            <span className={`block w-6 h-0.5 bg-black rounded transition-all duration-300`}></span>
+          </button>
+        )}
       </div>
-      {/* Mobile Menu Overlay */}
+      {/* Apple-style Mobile Menu Slide Down */}
       <div
-        className={`md:hidden fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
-        onClick={() => setOpen(false)}
-        aria-hidden={!open}
-      />
-      {/* Mobile Menu Slide Down */}
-      <div
-        className={`md:hidden fixed top-0 left-0 z-50 w-full h-full bg-white shadow-lg transition-transform duration-300 ${open ? "translate-y-0" : "-translate-y-full"}`}
+        className={`md:hidden fixed top-0 left-0 z-50 w-full h-full bg-white transition-transform duration-300 ${open ? "translate-y-0" : "-translate-y-full"}`}
         aria-hidden={!open}
         style={{ willChange: 'transform' }}
       >
-        <nav className="flex flex-col gap-6 items-center justify-center h-full">
+        {/* Close X button */}
+        <button
+          className="absolute top-5 right-6 text-2xl text-black focus:outline-none focus:ring-2 focus:ring-black/50"
+          aria-label="Close navigation menu"
+          onClick={() => setOpen(false)}
+        >
+          &times;
+        </button>
+        <nav className="flex flex-col gap-6 items-start justify-center h-full pl-8 pt-20">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`px-3 py-2 rounded-md font-semibold transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:ring-2 focus-visible:ring-black/50 ${
-                pathname === link.href ? "bg-gray-200" : ""
+              className={`font-bold transition-colors hover:text-blue-700 focus-visible:outline focus-visible:ring-2 focus-visible:ring-blue-400 ${
+                pathname === link.href ? "text-blue-700" : "text-black"
               }`}
               style={{ fontSize: 28 }}
               onClick={handleNavClick}
