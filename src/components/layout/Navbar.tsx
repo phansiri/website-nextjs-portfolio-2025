@@ -53,18 +53,21 @@ export default function Navbar() {
         onClick={() => setOpen(false)}
         aria-hidden={!open}
       />
+      {/* Mobile Menu Slide Down */}
       <div
-        className={`md:hidden fixed top-0 right-0 z-50 w-3/4 max-w-xs h-full bg-white shadow-lg transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`md:hidden fixed top-0 left-0 z-50 w-full h-full bg-white shadow-lg transition-transform duration-300 ${open ? "translate-y-0" : "-translate-y-full"}`}
         aria-hidden={!open}
+        style={{ willChange: 'transform' }}
       >
-        <nav className="flex flex-col gap-2 p-6 pt-16">
+        <nav className="flex flex-col gap-6 items-center justify-center h-full">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`px-3 py-2 rounded-md text-base font-medium transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:ring-2 focus-visible:ring-black/50 ${
+              className={`px-3 py-2 rounded-md font-semibold transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:ring-2 focus-visible:ring-black/50 ${
                 pathname === link.href ? "bg-gray-200" : ""
               }`}
+              style={{ fontSize: 28 }}
               onClick={handleNavClick}
             >
               {link.label}
