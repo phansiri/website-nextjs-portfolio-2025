@@ -13,12 +13,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <Card className="w-full max-w-xl mx-auto mb-8">
+      <Card className="w-full max-w-xl mx-auto mb-8 h-[580px] flex flex-col">
         <CardHeader>
           <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
           <CardDescription className="text-blue-700 font-medium mt-1">{project.impact}</CardDescription>
         </CardHeader>
-        <CardContent className="flex flex-col gap-4">
+        <CardContent className="flex flex-col gap-4 flex-1 overflow-hidden">
           {project.visual && (
             <div className="w-full flex justify-center">
               <Image
@@ -35,7 +35,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               <Badge key={tech} variant="secondary">{tech}</Badge>
             ))}
           </div>
-          <div className="text-gray-700 text-sm leading-relaxed mt-2">{project.summary}</div>
+          <div className="text-gray-700 text-sm leading-relaxed mt-2 flex-1 overflow-auto">{project.summary}</div>
           {project.link && (
             <a
               href={project.link}
