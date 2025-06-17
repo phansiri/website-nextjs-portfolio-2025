@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "/home", label: "Home" },
@@ -15,6 +15,16 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [open]);
 
   const handleNavClick = () => setOpen(false);
 
@@ -51,7 +61,7 @@ export default function Navbar() {
       </div>
       {/* Apple-style Mobile Menu Slide Down */}
       <div
-        className={`md:hidden fixed top-0 left-0 z-50 w-full h-full bg-white transition-transform duration-300 ${open ? "translate-y-0" : "-translate-y-full"}`}
+        className={`md:hidden fixed top-0 left-0 z-50 w-full h-full bg-[#f9fafb] transition-transform duration-300 ${open ? "translate-y-0" : "-translate-y-full"}`}
         aria-hidden={!open}
         style={{ willChange: 'transform' }}
       >
