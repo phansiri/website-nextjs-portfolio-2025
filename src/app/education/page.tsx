@@ -28,6 +28,9 @@ export default function EducationPage() {
               {edu.description && (
                 <div className="text-gray-700 text-sm leading-relaxed mt-2 flex-1 overflow-auto">{edu.description}</div>
               )}
+              {edu.link && (
+                <div className="text-blue-700 text-sm mt-2"><a href={edu.link}>Learn More →</a></div>
+              )}
             </Card>
           </motion.div>
         ))}

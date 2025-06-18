@@ -27,7 +27,7 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          Lit Phansiri: Engineering Intelligent Systems
+          Lit Phansiri: Full Stack Data Scientist
         </motion.h1>
         {/* Value Proposition */}
         <motion.p
@@ -36,7 +36,7 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
         >
-          A U.S. Marine and UC Berkeley-trained Data Scientist specializing in the development of cutting-edge Generative AI solutions.
+          An Active Duty U.S. Marine and UC Berkeley-trained Data Scientist specializing in the development of cutting-edge Generative AI solutions.
         </motion.p>
         {/* Professional Photo Placeholder */}
         <motion.div
@@ -60,10 +60,16 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
+          className="flex flex-col md:flex-row gap-4 w-full items-center justify-center"
         >
           <Button asChild size="lg" className="text-base font-semibold px-8 py-4 shadow-md">
-            <Link href="/experience">
-              View My Work
+            <Link href="/about">
+              Find Out More About Me
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="text-base font-semibold px-8 py-4 border-2 border-black">
+            <Link href="/contact">
+              Link Up
             </Link>
           </Button>
         </motion.div>

@@ -5,7 +5,7 @@ export type Project = {
   tech: string[];
   visual?: string; // path to image, diagram, or gif
   summary: string;
-  link?: string; // URL for more info
+  link: string; // URL for more info
 };
 
 export const projects: Project[] = [
