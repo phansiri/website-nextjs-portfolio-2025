@@ -2,38 +2,46 @@ export type Project = {
   id: string;
   title: string;
   impact: string;
+  year: string;
   tech: string[];
   visual?: string; // path to image, diagram, or gif
   summary: string;
   link: string; // URL for more info
+  priority: boolean;
 };
 
 export const projects: Project[] = [
   {
-    id: "cyber-platform",
-    title: "Defensive Cyberspace Operations Platform",
-    impact: "Enabled real-time threat detection and response for critical military networks.",
-    tech: ["Python", "Supabase", "pgvector", "Docker"],
-    visual: "/visuals/cyber-platform-diagram.png",
-    summary: "Developed a scalable platform for monitoring and defending against cyber threats, leveraging AI and modern cloud-native technologies.",
-    link: "https://github.com/example/cyber-platform",
+    id: "ai-genzen",
+    title: "GenZen",
+    impact: "Your AI-powered mental health support companion.",
+    year: "2025",
+    tech: ["Python", "Langgraph", "RAG", "Finetune LLM", "Docker", "FastAPI", "Next.js", "AWS Ecosystem", "Kubernetes"],
+    visual: "/visuals/genzen-banner.png",
+    summary: "Empowering students to manage stress, build resilience, and enhance their well-being through personalized, AI-driven mental health support - bridging the gap between technology and human connection.",
+    link: "https://www.ischool.berkeley.edu/projects/2025/genzen",
+    priority: true,
   },
   {
-    id: "ai-agent-dev",
-    title: "AI Agent Development",
-    impact: "Automated intelligence analysis, reducing manual workload by 60%.",
-    tech: ["Python", "OpenAI", "FastAPI", "React"],
-    visual: "/visuals/ai-agent-gif.gif",
-    summary: "Built and deployed generative AI agents for data analysis and mission support, integrating with secure DoD infrastructure.",
-    link: "https://github.com/example/ai-agent-dev",
+    id: "web-kishu",
+    title: "Redesign Kishu Uuoko Website",
+    impact: "Increase website traffic and engagement.",
+    year: "2023",
+    tech: ["JavaScript", "Gatsby", "Bulma"],
+    visual: "/visuals/kishu-store.png",
+    summary: "Modernization of the fish stores website using modern web technologies and design principles.",
+    link: "https://kishuuoko.jp/",
+    priority: false,
   },
   {
-    id: "data-viz-dashboard",
-    title: "Operational Data Visualization Dashboard",
-    impact: "Improved situational awareness for commanders with real-time, interactive dashboards.",
-    tech: ["TypeScript", "Next.js", "D3.js", "Tailwind CSS"],
-    visual: "/visuals/data-viz-dashboard.png",
-    summary: "Designed and implemented a dashboard for visualizing operational data, supporting rapid decision-making in dynamic environments.",
-    link: "https://github.com/example/data-viz-dashboard",
+    id: "sw-solo",
+    title: "System for Operations Logistics Order (SOLO)",
+    impact: "Concept on how to modernize the Marine Corps' logistics system with a CI/CD pipeline for compliance.",
+    year: "2020",
+    tech: ["Python", "Django", "React", "GitHub Actions", "AWS Ecosystem"],
+    visual: "/visuals/solo.png",
+    summary: "Defense Digital Service project. It was created to prove that the Marine Corps can organically develop adhering to sound best industry best practices.",
+    link: "https://github.com/deptofdefense/solo",
+    priority: false,
   },
 ]; 
