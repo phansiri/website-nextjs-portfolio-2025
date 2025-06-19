@@ -16,7 +16,7 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
       <Card className="w-full max-w-xl mx-auto mb-8 h-[600px] flex flex-col">
         <CardHeader>
           <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
-          <CardDescription className="text-blue-700 font-medium mt-1">{project.impact}</CardDescription>
+          <CardDescription className="text-blue-700 dark:text-blue-300 font-medium mt-1">{project.impact}</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4 flex-1 overflow-hidden">
           {project.visual && (
@@ -36,14 +36,14 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
               <Badge key={tech} variant="secondary">{tech}</Badge>
             ))}
           </div>
-          <div className="text-gray-700 text-sm leading-relaxed mt-2 flex-1 overflow-auto">{project.year}</div>
-          <div className="text-gray-700 text-sm leading-relaxed mt-2 flex-1 overflow-auto">{project.summary}</div>
+          <div className="text-gray-700 dark:text-gray-300 text-md">{project.year}</div>
+          <div className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mt-2 flex-1 overflow-auto">{project.summary}</div>
           {project.link && (
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-2 text-blue-600 hover:underline font-semibold text-sm focus-visible:outline focus-visible:ring-2 focus-visible:ring-blue-400 rounded px-2 py-1"
+              className="inline-block mt-2 text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm focus-visible:outline focus-visible:ring-2 focus-visible:ring-blue-400 rounded px-2 py-1"
             >
               Learn More →
             </a>

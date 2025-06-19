@@ -2,9 +2,9 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function ContactPage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen w-full px-4 bg-gradient-to-b from-white to-gray-50">
+    <main className="flex flex-col items-center justify-center min-h-screen w-full px-4 bg-gradient-to-b">
       <h1 className="text-4xl font-bold mb-6 text-center">Let&apos;s Connect</h1>
-      <p className="text-lg text-gray-700 mb-8 text-center max-w-xl">
+      <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 text-center max-w-xl">
         I&apos;m always open to connecting with fellow professionals, collaborators, and innovators. The best way to reach me is via LinkedIn.
       </p>
       <a
