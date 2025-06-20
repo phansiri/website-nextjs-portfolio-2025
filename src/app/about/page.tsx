@@ -15,7 +15,7 @@ export default function AboutPage() {
             priority
           />
         </div>
-        <div className="flex-1 max-w-2xl">
+        <div className="flex-1 max-w-6xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">My Journey: Shaping my future the way I want it</h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
           My journey into technology didn't start with a computer, but with a leap of faith. As a refugee from Laos, I grew up in Kansas knowing that to build the life I envisioned, I would have to seek opportunities far beyond the familiar. In 2003, I took that plunge and enlisted in the United States Marine Corps.
