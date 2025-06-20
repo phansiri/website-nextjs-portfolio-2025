@@ -21,14 +21,14 @@ function HamburgerToXIcon({ open }: { open: boolean }) {
       <span
         className={`
           absolute left-0 top-1/2 w-6 h-0.5 bg-black dark:bg-white rounded transition-all duration-300
-          ${open ? "rotate-45 translate-y-0" : "-translate-y-2"}
+          ${open ? "rotate-45" : "-translate-y-1.5"}
         `}
         style={{ transitionProperty: "transform, background" }}
       />
       <span
         className={`
           absolute left-0 top-1/2 w-6 h-0.5 bg-black dark:bg-white rounded transition-all duration-300
-          ${open ? "-rotate-45 -translate-y-2" : ""}
+          ${open ? "-rotate-45" : "translate-y-1.5"}
         `}
         style={{ transitionProperty: "transform, background" }}
       />
