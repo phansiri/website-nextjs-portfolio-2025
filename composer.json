@@ -1,0 +1,14 @@
+{
+    "name": "phansiri/phansiri.com",
+    "description": "Lit Phansiri's Portfolio",
+    "require": {
+        "next/next": "15.3.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lit phansiri",
+            "email": "lphansiri@gmail.com"
+        }
+    ]
+}
