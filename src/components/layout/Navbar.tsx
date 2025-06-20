@@ -28,7 +28,7 @@ function HamburgerToXIcon({ open }: { open: boolean }) {
       <span
         className={`
           absolute left-0 top-1/2 w-6 h-0.5 bg-black dark:bg-white rounded transition-all duration-300
-          ${open ? "-rotate-45 translate-y-0" : "translate-y-2"}
+          ${open ? "-rotate-45 -translate-y-2" : ""}
         `}
         style={{ transitionProperty: "transform, background" }}
       />
@@ -36,10 +36,25 @@ function HamburgerToXIcon({ open }: { open: boolean }) {
   );
 }
 
+const ThemeToggle = () => {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="ml-2"
+    >
+      {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  );
+};
+
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // After mounting, we have access to the theme
@@ -72,40 +87,29 @@ export default function Navbar() {
       {/* Main navigation bar */}
       <nav className="sticky top-0 z-50 w-full">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
-          <div className="font-bold text-lg tracking-tight select-none"><a href="/">Lit Phansiri</a></div>
+          <div className="font-bold text-lg tracking-tight select-none">
+            <Link href="/">Lit Phansiri</Link>
+          </div>
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-2 items-center">
+          <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:outline focus-visible:ring-2 focus-visible:ring-black/50 dark:focus-visible:ring-white/50 ${
-                  pathname === link.href ? "bg-gray-200 dark:bg-gray-800" : ""
+                className={`font-medium transition-colors ${
+                  pathname === link.href
+                    ? "text-black dark:text-white"
+                    : "text-gray-500 hover:text-black dark:hover:text-white"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="ml-2"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </div>
+            <ThemeToggle />
+          </nav>
           {/* Mobile Hamburger Button */}
           <div className="md:hidden flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              <span className="sr-only">Toggle theme</span>
-            </Button>
+            <ThemeToggle />
             <button
               onClick={() => setOpen((prev) => !prev)}
               className="flex justify-center items-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-black/50 dark:focus:ring-white/50"
