@@ -8,10 +8,10 @@ export default function ContactPage() {
         I&apos;m always open to connecting with fellow professionals, collaborators, and innovators. The best way to reach me is via LinkedIn.
       </p>
       <a
-        href="https://www.linkedin.com/in/litphansiri/"
+        href="https://www.linkedin.com/in/litthideth-phansiri-6b79b098"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-3 px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-lg font-semibold shadow-lg transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-blue-400"
+        className="inline-flex items-center gap-3 px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-lg font-semibold shadow-lg transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-blue-400 dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white"
         aria-label="Connect with me on LinkedIn"
       >
         <FaLinkedin size={32} />

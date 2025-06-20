@@ -7,7 +7,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function HomePageClient() {
   return (
-    <main className="relative flex flex-col items-center justify-center min-h-screen px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-black overflow-hidden">
+    <main className="relative flex flex-col items-center justify-center min-h-screen px-4 bg-gradient-to-b overflow-hidden">
       {/* SVG/Gradient Background Visual */}
       <div className="absolute inset-0 -z-10 flex items-center justify-center">
         <svg width="900" height="600" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-40 dark:opacity-20 blur-2xl">
@@ -78,7 +78,7 @@ export default function HomePageClient() {
             asChild 
             size="lg" 
             variant="outline" 
-            className="text-base font-semibold px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
+            className="text-base font-semibold px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white hover:bg-blue-300 dark:hover:bg-gray-800 rounded-full"
           >
             <Link href="/contact">
               <FaLinkedin size={24} className="mr-2" />

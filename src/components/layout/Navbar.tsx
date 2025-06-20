@@ -70,7 +70,7 @@ export default function Navbar() {
   return (
     <Fragment>
       {/* Main navigation bar */}
-      <nav className="sticky top-0 z-50 w-full bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+      <nav className="sticky top-0 z-50 w-full">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
           <div className="font-bold text-lg tracking-tight select-none"><a href="/">Lit Phansiri</a></div>
           {/* Desktop Nav */}
